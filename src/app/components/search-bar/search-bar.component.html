@@ -1,0 +1,16 @@
+<div class="search-container">
+    <form class="search-form" #form="ngForm" (ngSubmit) ="onSubmit(form)">
+        <span class="logo" routerLink="/" (click)="clearSearch()">Komos</span>
+        
+        <input
+            [(ngModel)]="search"
+            class="search-input"
+            name="search"           
+            placeholder="Search Comedy events near you"
+            (onkeyup)="runSearch()"
+        />
+        
+        <button class="search-button">Search</button>
+    </form>
+    <a class="about" routerLink="about">About</a>
+</div>

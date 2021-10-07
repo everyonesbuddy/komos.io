@@ -1,0 +1,49 @@
+<div class="event-tabs">
+    
+    <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
+        <mat-tab label="About">
+            <p class="event-tab-par">
+                Name: <span>{{name}}</span>
+            </p>
+            <p class="event-tab-par">
+                City: <span>{{venues.city.name}}</span>
+            </p>
+            <p class="event-tab-par">
+                State: <span>{{venues.state.name}}</span>
+            </p>
+            <p class="event-tab-par">
+                Price range: <span>${{priceranges.min}} - ${{priceranges.max}}</span>
+            </p>
+            <p class="event-tab-par">
+                Date: <span>{{dates.start.localDate}}</span>
+            </p>
+            <p class="event-tab-par">
+                Venues: <span>{{venues.name}}</span>
+            </p>
+            <p class="event-tab-par">
+                Address: <span>{{venues.address.line1}}</span>
+            </p>
+            <p class="event-tab-par">
+                Description: <span>{{venues.generalInfo.generalRule}}</span>
+            </p>
+            <div class="event-discription"></div>
+            <!--<p class="event-tab-votes">
+                <span>
+                    <mat-icon class="event-votes-up">thumb_up</mat-icon>
+                    <span class="event-votes-count"></span>
+                  </span>
+                  <span >
+                    <mat-icon class="event-votes-down">thumb_down</mat-icon>
+                    <span class="event-votes-count"></span>
+                  </span>
+            </p>-->
+        </mat-tab>
+        <mat-tab label="Screenshots">
+            
+            <img width="200" *ngFor="let img of images" src="{{img.url}}" alt="screenshots">
+                
+          
+            
+        </mat-tab>
+    </mat-tab-group>
+</div>

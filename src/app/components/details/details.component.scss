@@ -1,0 +1,116 @@
+.details-wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.details {
+  ::ng-deep mwl-gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+
+    .dial {
+      stroke-width: 10;
+    }
+
+    .value {
+      stroke-dasharray: none;
+      stroke-width: 13;
+    }
+
+    .value-text {
+      fill: #fff;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
+  .event-gauge {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    &-label {
+      font-size: 20px;
+      color: #fff;
+      position: relative;
+      bottom: 60px;
+    }
+  }
+}
+
+.event {
+  &-back {
+    color: #fff;
+    margin: 10px 40px;
+    float: right;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    &-container {
+      overflow: auto;
+    }
+  }
+
+  &-banner {
+    height: 442px;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      filter: blur(5px);
+    }
+  }
+
+  &-content {
+    text-align: center;
+    position: relative;
+    top: -200px;
+  }
+
+  &-header {
+    &-title {
+      font-size: 30px;
+      color: #fff;
+      font-weight: 700;
+      line-height: 70px;
+      white-space: nowrap;
+    }
+
+    &-release-date {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    &-genres {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+
+  &-button {
+    border: none;
+    outline: none;
+    background: #3f51b5;
+    padding: 10px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+
+  &-link {
+    color: #fff;
+    text-decoration: none;
+  }
+}

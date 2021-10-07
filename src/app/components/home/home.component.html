@@ -1,0 +1,22 @@
+<app-search-bar (srchtxt)="onSearch($event)"></app-search-bar>
+<div class="events">
+    <ng-container *ngIf="( events | filter : sub) as result">
+    <div *ngFor="let event of result">
+        <div class="event" (click)="openEventDetails(event.id)">
+            <div class="event-thumb-container">
+                <img 
+                    src={{event.images[0].url}}
+                    alt="thumbnail"
+                    class="event-thumbnail"
+                />
+            </div>
+            <div class="event-description">
+                <p class="event-name" title="{{event.name}}">{{event.name}}</p>
+                <p class="event-name">{{event._embedded.venues[0].city.name }} - {{event._embedded.venues[0].state.stateCode }}</p>
+                <div class="event-date">{{event.dates.start.localDate|date: ' MM/dd/yyyy'}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="result.length === 0" class="no-event">{{msg}}</div> 
+    </ng-container>  
+</div>

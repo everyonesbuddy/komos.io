@@ -1,0 +1,23 @@
+<div class="details" *ngIf="event">
+    <app-navbar></app-navbar>
+    <div class="event-banner">
+        
+        <img 
+            class="event-banner-img"
+            src="{{event.images[0].url}}" 
+            alt="background image"
+        />
+    </div>
+    <div class="event-content">
+        <div class="details-wrapper">
+            <div class="event-header">
+                <h1 class="event-header-title">{{event._embedded.venues[0].city.name }} - {{event._embedded.venues[0].state.stateCode }}</h1>
+                <h2 class="event-header-release-date">
+                    {{event.dates.start.localDate|date: ' MM/dd/yyyy'}}
+                </h2> 
+                <button  class="event-button"><a class="event-link" href="{{event.url}}" target="_blank">Get Ticket</a></button>
+            </div>
+            <app-event-tabs [name]="event.name" [images]="event.images" [venues]="event._embedded.venues[0]" [priceranges]="event.priceRanges[0]" [dates]="event.dates"></app-event-tabs>
+        </div>
+    </div>
+</div>
